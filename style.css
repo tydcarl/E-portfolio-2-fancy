@@ -75,6 +75,7 @@ textarea:focus {
   padding: 0 12px;
 }
 .click {
+  cursor: pointer;
   transition: all 300ms ease;
 }
 
@@ -360,8 +361,7 @@ nav {
   color: #f06449;
 }
 
-.modal__overlay--loading {
-  background-color: blue;
+.modal__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -370,8 +370,20 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.modal__overlay--loading {
+  background-color: #242424;
   font-size: 80px;
   z-index: -1;
+}
+
+.modal__overlay--success {
+  background-color: #4bb543;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  padding: 32px;
 }
 
 .fa-spinner {
@@ -385,6 +397,15 @@ nav {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.modal__exit {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 36px;
+  z-index: 100;
 }
 /* Projects */
 
