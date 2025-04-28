@@ -4,12 +4,26 @@
 
 function contact(event) {
   event.preventDefault();
-  /*    emailjs.sendform(
+  const loading = document.querySelector(".modal__overlay--loading");
+  const success = document.querySelector(".modal__overlay--success");
+  loading.classList += " modal__overay--visble";
+
+  emailjs
+    .sendform(
       "service_an0icci",
       "template_s3chdi9, ",
       event.target,
       "f0SISkgznorqeV6fF"
-    ).then (() => { 
-        console.log('this worked1')
-    }) */
+    )
+    .then(() => {
+      loading.classList.remove("modal__overlay--visible");
+      success.classList += " modal__overlay--visible";
+    })
+    .catch(() => {
+      loading.classList.remove("modal__overlay--visible");
+      alert(
+        "the email service is temporarily unavailable.  Please contact me directly on tydcarl@gmail.com"
+      );
+    })
+ 
 }
