@@ -9,9 +9,9 @@ function contact(event) {
   loading.classList += " modal__overay--visble";
 
   emailjs
-    .sendform(
+    .sendForm(
       "service_an0icci",
-      "template_s3chdi9, ",
+      "template_s3chdi9 ",
       event.target,
       "f0SISkgznorqeV6fF"
     )
@@ -24,6 +24,5 @@ function contact(event) {
       alert(
         "the email service is temporarily unavailable.  Please contact me directly on tydcarl@gmail.com"
       );
-    })
- 
+    });
 }
