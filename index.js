@@ -11,7 +11,7 @@ function contact(event) {
   emailjs
     .sendForm(
       "service_an0icci",
-      "template_s3chdi9 ",
+      "template_s3chdi9",
       event.target,
       "f0SISkgznorqeV6fF"
     )
@@ -25,4 +25,15 @@ function contact(event) {
         "the email service is temporarily unavailable.  Please contact me directly on tydcarl@gmail.com"
       );
     });
+}
+
+let isModalOpen = false;
+function toggleModal() {
+  if (isModalOpen) {
+        isModalOpen = false;
+    return document.body.classList.remove("modal--open");
+  }
+  //toggle modal
+    isModalOpen = true;
+  document.body.classList += " modal--open";
 }
