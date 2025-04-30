@@ -7,6 +7,10 @@
   font-family: "roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 li {
   list-style-type: none;
 }
@@ -126,32 +130,29 @@ textarea:focus {
   width: 100%;
 }
 
-nav, 
-.scroll, 
+nav,
+.scroll,
 .header {
   opacity: 1;
   visibility: visible;
   transition: all 600ms 800ms;
 }
 
-.modal--open nav, 
-.modal--open .scroll, 
+.modal--open nav,
+.modal--open .scroll,
 .modal--open .header {
-
   opacity: 0;
   visibility: hidden;
   transition: all 400ms;
 }
 
-.dark-theme .title, 
-.dark-theme .section__title, 
-.dark-theme .section__sub-title, 
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub-title,
 .dark-theme .nav__link--anchor,
 .dark-theme .fa-circle-half-stroke,
-.dark-theme .header__para
-{
+.dark-theme .header__para {
   color: white;
-
 }
 
 .dark-theme section {
@@ -166,7 +167,7 @@ nav,
   border-color: white;
 }
 
-.dark-theme .scroll__icon:after, 
+.dark-theme .scroll__icon:after,
 .dark-theme .link__hover-effect--black:after {
   background-color: white;
 }
@@ -175,10 +176,6 @@ nav,
   background-color: white;
   color: #242424;
 }
-
-
-
-
 
 /* LANDING PAGE */
 
@@ -322,7 +319,7 @@ nav {
   display: flex;
   visibility: hidden;
   z-index: -1;
-  transition: visibility 1s, z-index 1s, box-shadow .5s, ease;
+  transition: visibility 1s, z-index 1s, box-shadow 0.5s, ease;
 }
 
 .modal--open .modal {
@@ -342,15 +339,13 @@ nav {
 }
 
 .modal--open .modal__about,
-.modal--open .modal__contact  
-{
-transform: translateX(0%);
-
+.modal--open .modal__contact {
+  transform: translateX(0%);
 }
 
 .modal__about {
   background-color: rgb(245, 245, 245);
-  transform: translateX(-110% );
+  transform: translateX(-110%);
 }
 
 .modal__language {
@@ -644,4 +639,65 @@ SHAPES
 .shape-8 {
   top: 80vh;
   left: 80vw;
+}
+
+/* 
+
+SMALL TABLETS
+
+*/
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 80px;
+  }
+
+  .header__para {
+    font-size: 20px;
+  }
+  .modal {
+    top: 0;
+    left: 0;
+    transform: none;
+    height: auto;
+    width: 100%;
+    flex-direction: column-reverse;
+    border-radius: 0;
+  }
+  .modal__half {
+    width: 100%;
+  }
+}
+
+/* 
+
+SMALL PHONES 
+
+*/
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 52px;
+  }
+  .header__para {
+    font-size: 18px;
+  }
+  .nav__link:first-child {
+    display: none;
+  }
+  .project__description--para {
+    display: none;
+  }
+  .project__description {
+    left: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .project__description--sub-title {
+    margin-bottom: 8px;
+  }
+  .modal__half {
+    padding: 40px;
+  }
 }
